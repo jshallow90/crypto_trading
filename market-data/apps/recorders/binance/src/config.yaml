@@ -2,4 +2,4 @@ ws: "wss://data-stream.binance.vision"
 tickers:
   - "btcusdt@trade"
   - "ethusdt@trade"
-  - "btcusdt@depth"
+  # - "btcusdt@depth" (book)
