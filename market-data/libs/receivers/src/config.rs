@@ -1,7 +1,5 @@
-use crate::test_consts;
 use serde::Deserialize;
 use std::fs;
-
 
 
 #[derive(Debug, Deserialize)]
@@ -25,11 +23,6 @@ impl Config {
         println!("{:?}", config); 
         config
     }
-
-    pub fn get_api_url(self) -> String {
-        let tickers = self.tickers.join("/");
-        format!("{0}/stream?streams={1}&timeUnit=MICROSECOND", self.ws, tickers)
-    }
 }
 
 
@@ -37,12 +30,19 @@ impl Config {
 mod tests {
     use super::*;
 
+    const CONFIG_STRING: &str = "
+ws: \"wss://test_websocket_url\"
+tickers:
+  - \"btcusdt@trade\"
+  - \"ethusdt@trade\"
+  - \"btcusdt@depth\"
+";
+
     #[test]
     fn test_config() {
-        let config = Config::from_string(test_consts::CONFIG_STRING);
+        let config = Config::from_string(CONFIG_STRING);
         
         assert_eq!(config.ws, "wss://test_websocket_url");
         assert_eq!(config.tickers, vec!["btcusdt@trade", "ethusdt@trade", "btcusdt@depth"]);
-        assert_eq!(config.get_api_url(), "wss://test_websocket_url/stream?streams=btcusdt@trade/ethusdt@trade/btcusdt@depth&timeUnit=MICROSECOND");
     }
 }
