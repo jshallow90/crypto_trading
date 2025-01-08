@@ -17,8 +17,8 @@
             "request": "launch",
             "name": "[Binance] - websocket loader",
             "args": [],
-            "cwd": "${workspaceRoot}/apps/recorders/binance",
-            "program": "${workspaceRoot}/apps/recorders/binance/target/debug/binance",
+            "cwd": "${workspaceRoot}/apps/receivers/binance",
+            "program": "${workspaceRoot}/apps/receivers/binance/target/debug/binance",
             "sourceLanguages": [
                 "rust"
             ]
