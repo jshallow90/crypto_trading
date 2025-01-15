@@ -1,5 +1,5 @@
 ws: "wss://data-stream.binance.vision"
+instrument_api: "https://api.binance.com/api/v3/exchangeInfo"
 tickers:
-  - "btcusdt@trade"
-  - "ethusdt@trade"
-  # - "btcusdt@depth" (book)
+  - "btcusdt@depth5@100ms"
+  - "ethusdt@depth5@100ms"

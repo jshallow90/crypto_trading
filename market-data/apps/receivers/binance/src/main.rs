@@ -5,10 +5,9 @@ use receivers::binance::receiver::Receiver;
 fn main() {
 
     /* TODO list
-        - track the last traded price (inside bid / ask)
+        - create process to listen and interpret books instead of trades
         - make the config command line option
         - create a hyperconfig listener
-        - create process to listen and interpret books
      */
     
     let config = Config::from_file("/home/jshallow/src/crypto-trading/market-data/apps/receivers/binance/src/config.yaml");
